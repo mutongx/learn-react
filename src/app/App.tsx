@@ -1,6 +1,11 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, Dispatch, useState } from "react";
 
-function NumberInput({ value, setValue }) {
+interface NumberInputOption {
+  value: number,
+  setValue: Dispatch<number>
+}
+
+function NumberInput({ value, setValue }: NumberInputOption) {
   function handleOnChange(event: ChangeEvent<HTMLInputElement>) {
     setValue(parseInt(event.target.value));
   }
@@ -9,7 +14,12 @@ function NumberInput({ value, setValue }) {
   )
 }
 
-function ResultDisplay({ a, b }) {
+interface ResultDisplayOption {
+  a: number,
+  b: number,
+}
+
+function ResultDisplay({ a, b }: ResultDisplayOption) {
   return (
     <>
       {a} + {b} = {a + b}
