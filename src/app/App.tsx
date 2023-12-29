@@ -5,7 +5,7 @@ function NumberInput({ value, setValue }) {
     setValue(parseInt(event.target.value));
   }
   return (
-    <input type="text" value={value} onChange={handleOnChange} />
+    <input type="text" value={value.toString()} onChange={handleOnChange} />
   )
 }
 
